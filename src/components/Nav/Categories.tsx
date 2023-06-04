@@ -8,7 +8,7 @@ import { useRef } from 'react'
 
 const ButtonBox = styled.div`
 	display: flex;
-	gap: 20px;
+	gap: 2rem;
 	& svg {
 		fill: #5a698f;
 		transition: fill 0.3s;
@@ -19,6 +19,12 @@ const ButtonBox = styled.div`
 	& svg .active {
 		fill: var(--white);
 	}
+    @media (min-width: 768px){
+        gap: 3.5rem;
+    }
+    @media (min-width: 1024px){
+        flex-direction: column;
+    }
 `
 
 export const Categories = () => {

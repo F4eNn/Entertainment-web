@@ -16,14 +16,21 @@ export const GlobalStyles = createGlobalStyle`
   --radius-sm: 5px;
   --radius-md: 10px;
   --radius-xl: 15px;
-
-
 } 
 html{
   font-size: 62.5%;
 }
 body{
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--dark-blue);
+  @media (min-width: 768px){
+    padding-block-start: 2rem;
+  }
+  @media (min-width: 1024px){
+    padding-block-start: 0;
+    display: flex;
+    max-width: 1440px;
+    
+  }
 }
 `

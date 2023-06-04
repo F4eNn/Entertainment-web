@@ -12,8 +12,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang='en'>
 			<body className={outfit.className}>
-				<Nav />
 				<GlobalStyles />
+				<Nav />
 				{children}
 			</body>
 		</html>

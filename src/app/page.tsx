@@ -1,14 +1,10 @@
-'use client'
-import styled from 'styled-components'
-
-const StyledMain = styled.main`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`
-
+import { Browser } from '@/components/Browser/Browser'
+import { Trending } from '@/components/Trending/Trending'
 export default function Home() {
-	return <StyledMain>
-		
-	</StyledMain>
+	return (
+		<main style={{overflow: 'hidden'}}>
+			<Browser />
+			<Trending />
+		</main>
+	)
 }
