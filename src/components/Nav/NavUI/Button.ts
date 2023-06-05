@@ -7,10 +7,6 @@ export const Button = styled.button`
     background-color: transparent;
     border: none;
     cursor: pointer;
-    & img{
-        color: red;
-        background-color: red;
-        fill: red;
-    }
+
 
 `

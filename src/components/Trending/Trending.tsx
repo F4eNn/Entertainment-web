@@ -1,15 +1,46 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { Thumbnail } from '../UI/Thumbnail'
-import { Carousel, InnerCarousel, ItemBox } from './TrendingStyles'
+import { H1, ItemBox, TrendingContainer } from './TrendingStyles'
 import { Details } from '../UI/Details'
-
-type DataTrending = {
-	title: string
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+export type DataTrending = {
 	thumbnail: { trending: { [size: string]: string } }
+	rating: string
+	category: string
+	title: string
+	year: number
 }
 export const Trending = () => {
 	const [data, setData] = useState<DataTrending[]>([])
+
+	const settings = {
+		className: 'center',
+		infinite: false,
+		centerPadding: '100px',
+		slidesToShow: 2.5,
+		swipeToSlide: true,
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					centerPadding: '50px',
+
+					slidesToShow: 1.5,
+				},
+			},
+			{
+				breakpoint: 374,
+				settings: {
+					centerPadding: '50px',
+
+					slidesToShow: 1.2,
+				},
+			},
+		],
+	}
 
 	useEffect(() => {
 		const createApi = async () => {
@@ -25,24 +56,28 @@ export const Trending = () => {
 	}, [])
 
 	const trendingArr = data.slice(0, 5)
-	const trendinsg = data.map(item => console.log(item))
-	const trendingItem = trendingArr.map(item => (
-		<ItemBox key={item.title}>
-			<Thumbnail
-				image={item.thumbnail.trending?.large}
-				alt={item.title}
-			/>
-			<Details />
-		</ItemBox>
-	))
 
 	return (
-		<Carousel>
-			<InnerCarousel
-				drag='x'
-				dragConstraints={{ right: 0 }}>
-				{trendingItem}
-			</InnerCarousel>
-		</Carousel>
+		<>
+			<TrendingContainer>
+				<H1>Trending</H1>
+				<Slider {...settings}>
+					{trendingArr.map((item, index) => (
+						<ItemBox key={index}>
+							<Thumbnail
+								image={item.thumbnail.trending?.large}
+								alt={item.title}
+							/>
+							<Details
+								category={item.category}
+								rating={item.rating}
+								title={item.title}
+								year={item.year}
+							/>
+						</ItemBox>
+					))}
+				</Slider>
+			</TrendingContainer>
+		</>
 	)
 }

@@ -1,22 +1,24 @@
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
-
-export const Carousel = styled(motion.div)`
-	background-color: transparent;
+export const TrendingContainer = styled.div`
 	width: 100%;
-	margin-top: 3rem;
-	cursor: grab;
-	overflow: hidden;
+	margin-top: 2rem;
+	font-size: clamp(1em, 2vw, 1.5em);
 `
-export const InnerCarousel = styled(motion.div)`
-	display: flex;
-	padding-left: 1rem;
-	gap: 15px;
-	background-color: transparent;
+export const H1 = styled.h1`
+	width: 95%;
+	font-weight: 300;
+	margin: 0 auto;
 `
-export const ItemBox = styled(motion.div)`
-	min-width: 60vw;
-	min-height: 150px;
-	pointer-events: none;
+
+export const ItemBox = styled.div`
+	height: 200px;
+	padding: 2rem;
 	position: relative;
+	cursor: grab;
+	@media (min-width: 576px) {
+		height: 250px;
+	}
+	@media (min-width: 768px) {
+		height: 275px;
+	}
 `

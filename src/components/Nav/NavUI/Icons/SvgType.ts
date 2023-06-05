@@ -1,0 +1,3 @@
+type SvgType = {
+	fill?: string
+}

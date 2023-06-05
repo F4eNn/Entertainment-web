@@ -13,13 +13,20 @@ const ProfileContainer = styled.div`
 		border: 2px solid var(--white);
 		border-radius: 50%;
 	}
+	
+`
+const Img = styled(Image)`
+	@media (min-width: 768px) {
+		width: 30px;
+		height: 25px;
+	}
 `
 
 export const Nav = () => {
 	return (
 		<Card>
 			<Link href='/'>
-				<Image
+				<Img
 					src='/assets/logo.svg'
 					alt='logo'
 					width={25}

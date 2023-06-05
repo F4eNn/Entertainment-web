@@ -7,6 +7,7 @@ const Box = styled.div`
 	height: 100%;
 	background-color: #fff;
 	border-radius: var(--radius-sm);
+	border-radius: 10px;
 	overflow: hidden;
 `
 type ThumbnailProps = {

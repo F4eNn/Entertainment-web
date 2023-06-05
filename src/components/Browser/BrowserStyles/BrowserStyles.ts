@@ -19,6 +19,9 @@ export const Container = styled.div`
 	display: flex;
 	align-items: center;
 	margin-inline: auto;
-	width: 90%;
+	width: 95%;
 	font-size: clamp(1.5em, 2.1vw, 2em);
+	@media (min-width: 768px){
+		margin-top: 2rem;
+	}
 `

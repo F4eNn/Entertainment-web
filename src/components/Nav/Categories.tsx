@@ -24,6 +24,7 @@ const ButtonBox = styled.div`
     }
     @media (min-width: 1024px){
         flex-direction: column;
+		margin: 5rem 0 auto 0;
     }
 `
 
