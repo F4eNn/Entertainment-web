@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react'
 import { Thumbnail } from '../UI/Thumbnail'
 import { H1, ItemBox, TrendingContainer } from './TrendingStyles'
 import { Details } from '../UI/Details'
+import { Overlay } from '../UI/Overlay'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { BookmarkButton } from '../UI/BookmarkButton'
 export type DataTrending = {
 	thumbnail: { trending: { [size: string]: string } }
 	rating: string
@@ -15,11 +17,12 @@ export type DataTrending = {
 }
 export const Trending = () => {
 	const [data, setData] = useState<DataTrending[]>([])
+	const [isHovering, setIsHovering] = useState(false)
 
 	const settings = {
 		className: 'center',
 		infinite: false,
-		centerPadding: '100px',
+		// centerPadding: '100px',
 		slidesToShow: 2.5,
 		swipeToSlide: true,
 		responsive: [
@@ -57,6 +60,8 @@ export const Trending = () => {
 
 	const trendingArr = data.slice(0, 5)
 
+	
+
 	return (
 		<>
 			<TrendingContainer>
@@ -66,14 +71,15 @@ export const Trending = () => {
 						<ItemBox key={index}>
 							<Thumbnail
 								image={item.thumbnail.trending?.large}
-								alt={item.title}
-							/>
+								alt={item.title}/>
+							
 							<Details
 								category={item.category}
 								rating={item.rating}
 								title={item.title}
 								year={item.year}
 							/>
+							<BookmarkButton />
 						</ItemBox>
 					))}
 				</Slider>

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { DataTrending } from '../Trending/Trending'
-import { MovieIcon } from '../Nav/NavUI/Icons/MovieIcon'
-import { TvSeriesIcon } from '../Nav/NavUI/Icons/TvSeriesIcon'
+import { MovieIcon } from '../Icons/MovieIcon'
+import { TvSeriesIcon } from '../Icons/TvSeriesIcon'
 
 const Card = styled.div`
 	position: absolute;
@@ -13,13 +13,13 @@ const Card = styled.div`
 	height: 100px;
 	gap: 5px;
 	padding: 0 0 1.5rem 2rem;
+	cursor: grab;
 `
 const Dot = styled.span`
 	height: 5px;
 	width: 5px;
 	border-radius: 50%;
 	background-color: var(--gray);
-	z-index: 100;
 `
 const InfoBox = styled.div`
 	display: flex;
@@ -28,6 +28,9 @@ const InfoBox = styled.div`
 `
 const H3 = styled.h3`
 	font-size: 1.3em;
+`
+const StyledDiv = styled.div`
+	z-index: 200;
 `
 
 export const Details = ({ rating, category, title, year }: Partial<DataTrending>) => {
@@ -42,9 +45,9 @@ export const Details = ({ rating, category, title, year }: Partial<DataTrending>
 				<Dot />
 				<span>{rating}</span>
 			</InfoBox>
-			<div>
+			<StyledDiv>
 				<H3>{title}</H3>
-			</div>
+			</StyledDiv>
 		</Card>
 	)
 }

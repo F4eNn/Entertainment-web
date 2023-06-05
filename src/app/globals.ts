@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
   --red: #fc4747;
   --dark-blue: #10141e;
   --greyish-blue: #5a698f;
+  --bookmark-button: #2f3542;
   --gray: #9da0a7;
   --white: #ffff;
   --semi-dark-blue: #161d2f;

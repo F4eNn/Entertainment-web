@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { Button } from './NavUI/Button'
-import { MovieIcon } from './NavUI/Icons/MovieIcon'
-import { HomeIcon } from './NavUI/Icons/HomeIcon'
-import { TvSeriesIcon } from './NavUI/Icons/TvSeriesIcon'
-import { BookmarkIcon } from './NavUI/Icons/BookmarkIcon'
+import { MovieIcon } from '../Icons/MovieIcon'
+import { HomeIcon } from '../Icons/HomeIcon'
+import { TvSeriesIcon } from '../Icons/TvSeriesIcon'
+import { BookmarkIcon } from '../Icons/BookmarkIcon'
 import { useRef } from 'react'
 
 const ButtonBox = styled.div`
@@ -19,13 +19,13 @@ const ButtonBox = styled.div`
 	& svg .active {
 		fill: var(--white);
 	}
-    @media (min-width: 768px){
-        gap: 3.5rem;
-    }
-    @media (min-width: 1024px){
-        flex-direction: column;
+	@media (min-width: 768px) {
+		gap: 3.5rem;
+	}
+	@media (min-width: 1024px) {
+		flex-direction: column;
 		margin: 5rem 0 auto 0;
-    }
+	}
 `
 
 export const Categories = () => {

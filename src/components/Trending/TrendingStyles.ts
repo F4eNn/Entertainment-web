@@ -15,6 +15,7 @@ export const ItemBox = styled.div`
 	padding: 2rem;
 	position: relative;
 	cursor: grab;
+	
 	@media (min-width: 576px) {
 		height: 250px;
 	}
