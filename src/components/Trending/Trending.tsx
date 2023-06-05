@@ -21,10 +21,13 @@ export const Trending = () => {
 
 	const settings = {
 		className: 'center',
-		infinite: false,
-		// centerPadding: '100px',
+		infinite: true,
+		centerPadding: '1rem',
 		slidesToShow: 2.5,
 		swipeToSlide: true,
+		margin: '0',
+		
+
 		responsive: [
 			{
 				breakpoint: 992,
@@ -60,8 +63,6 @@ export const Trending = () => {
 
 	const trendingArr = data.slice(0, 5)
 
-	
-
 	return (
 		<>
 			<TrendingContainer>
@@ -71,8 +72,9 @@ export const Trending = () => {
 						<ItemBox key={index}>
 							<Thumbnail
 								image={item.thumbnail.trending?.large}
-								alt={item.title}/>
-							
+								alt={item.title}
+							/>
+
 							<Details
 								category={item.category}
 								rating={item.rating}

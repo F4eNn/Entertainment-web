@@ -11,11 +11,13 @@ export const H1 = styled.h1`
 `
 
 export const ItemBox = styled.div`
-	height: 200px;
-	padding: 2rem;
+	margin-left: 2.7rem;
+	height: 180px;
+	
+	/* padding: 2rem; */
 	position: relative;
 	cursor: grab;
-	
+
 	@media (min-width: 576px) {
 		height: 250px;
 	}
