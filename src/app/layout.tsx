@@ -1,7 +1,6 @@
 import { Outfit } from 'next/font/google'
 import { GlobalStyles } from './globals'
 import { Nav } from '@/components/Nav/Nav'
-
 const outfit = Outfit({ subsets: ['latin'] })
 
 

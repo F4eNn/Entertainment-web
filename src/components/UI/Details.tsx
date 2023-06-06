@@ -1,19 +1,16 @@
 import styled from 'styled-components'
-import { DataTrending } from '../Trending/Trending'
+import { DataMovies } from '../Trending/Trending'
 import { MovieIcon } from '../Icons/MovieIcon'
 import { TvSeriesIcon } from '../Icons/TvSeriesIcon'
 
+
+
 const Card = styled.div`
-	position: absolute;
-	bottom: 0;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	width: 100%;
-	height: 100px;
+	height: 27%;
 	gap: 5px;
-	padding: 0 0 1.5rem 2rem;
-	cursor: grab;
 `
 const Dot = styled.span`
 	height: 5px;
@@ -25,6 +22,7 @@ const InfoBox = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	z-index: 200;
 `
 const H3 = styled.h3`
 	font-size: 1.3em;
@@ -33,7 +31,7 @@ const StyledDiv = styled.div`
 	z-index: 200;
 `
 
-export const Details = ({ rating, category, title, year }: Partial<DataTrending>) => {
+export const Details = ({ rating, category, title, year }: Partial<DataMovies>) => {
 	const isMovie = category === 'Movie' ? <MovieIcon fill='var(--white)' /> : <TvSeriesIcon fill='var(--white)' />
 	return (
 		<Card>

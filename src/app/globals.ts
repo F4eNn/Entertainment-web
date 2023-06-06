@@ -28,6 +28,7 @@ html{
 body{
   min-height: 100vh;
   background-color: var(--dark-blue);
+
   @media (min-width: 768px){
     padding-block-start: 2rem;
   }
@@ -35,7 +36,10 @@ body{
     padding-block-start: 0;
     padding: 2rem;
     display: flex;
-    max-width: 1440px;
+    justify-content: space-between;
+    margin-inline: auto;
+    /* max-width: 1440px; */
+    width: 100%;
     
   }
 }

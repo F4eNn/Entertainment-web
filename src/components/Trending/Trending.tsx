@@ -1,40 +1,42 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { Thumbnail } from '../UI/Thumbnail'
-import { H1, ItemBox, TrendingContainer } from './TrendingStyles'
+import { H1, ItemBox, StyledSlider, TrendingContainer } from './TrendingStyles'
 import { Details } from '../UI/Details'
-import { Overlay } from '../UI/Overlay'
-import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { BookmarkButton } from '../UI/BookmarkButton'
-export type DataTrending = {
-	thumbnail: { trending: { [size: string]: string } }
+
+export type DataMovies = {
+	thumbnail: {
+		trending: { [size: string]: string }
+		regular: { [size: string]: string }
+	}
 	rating: string
 	category: string
 	title: string
 	year: number
+	isTrending: boolean
 }
+
 export const Trending = () => {
-	const [data, setData] = useState<DataTrending[]>([])
-	const [isHovering, setIsHovering] = useState(false)
+	const [data, setData] = useState<DataMovies[]>([])
 
 	const settings = {
-		className: 'center',
 		infinite: true,
-		centerPadding: '1rem',
-		slidesToShow: 2.5,
+		autoplay: true,
+		autoplaySpeed: 4000,
+		speed: 2000,
+		slidesToShow: 3,
 		swipeToSlide: true,
-		margin: '0',
-		
-
+		arrows: false,
 		responsive: [
 			{
 				breakpoint: 992,
 				settings: {
 					centerPadding: '50px',
 
-					slidesToShow: 1.5,
+					slidesToShow: 2.2,
 				},
 			},
 			{
@@ -61,30 +63,30 @@ export const Trending = () => {
 		}
 	}, [])
 
-	const trendingArr = data.slice(0, 5)
+	const isTrendingArr = data.filter((item): item is DataMovies => item.isTrending === true)
 
 	return (
 		<>
 			<TrendingContainer>
 				<H1>Trending</H1>
-				<Slider {...settings}>
-					{trendingArr.map((item, index) => (
+				<StyledSlider {...settings}>
+					{isTrendingArr.map((item, index) => (
 						<ItemBox key={index}>
 							<Thumbnail
 								image={item.thumbnail.trending?.large}
-								alt={item.title}
-							/>
+								alt={item.title}>
+								<Details
+									category={item.category}
+									rating={item.rating}
+									title={item.title}
+									year={item.year}
+								/>
+							</Thumbnail>
 
-							<Details
-								category={item.category}
-								rating={item.rating}
-								title={item.title}
-								year={item.year}
-							/>
 							<BookmarkButton />
 						</ItemBox>
 					))}
-				</Slider>
+				</StyledSlider>
 			</TrendingContainer>
 		</>
 	)
