@@ -1,6 +1,10 @@
 'use client'
 import styled from 'styled-components'
+import { MoviesContext } from '@/components/store/moviesContext'
+import { useContext } from 'react'
+
 import { useApi } from '@/hooks/useApi'
+import { useFilterArr } from '@/hooks/useFilterArr'
 export const ContentContainer = styled.div`
 	width: 95%;
 	margin-inline: auto;
@@ -34,12 +38,14 @@ export const Grid = styled.div`
 export const HomeContent = () => {
 	const query = 'isTrending'
 	const value = false
-	const { relevantDataArr: allStuff, filteredArr: allStuffArr } = useApi(query, value)
-
+	const { relevantDataArr: homeMovies, allItemsArr } = useApi(query, value)
+	const { filteredItems } = useFilterArr(allItemsArr)
+	const moviesCtx = useContext(MoviesContext)
+	const content = moviesCtx.isInputEmpty ? homeMovies : filteredItems
 	return (
 		<ContentContainer>
 			<H2>Recomendet for you</H2>
-			<Grid>{allStuff}</Grid>
+			<Grid>{content}</Grid>
 		</ContentContainer>
 	)
 }

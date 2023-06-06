@@ -1,9 +1,8 @@
 import { Outfit } from 'next/font/google'
 import { GlobalStyles } from './globals'
 import { Nav } from '@/components/Nav/Nav'
+import { MoviesProvider } from '@/components/store/moviesProvider'
 const outfit = Outfit({ subsets: ['latin'] })
-
-
 
 export const metadata = {
 	title: 'Entertainment web',
@@ -11,17 +10,12 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-
-	
-
-
-
 	return (
 		<html lang='en'>
 			<body className={outfit.className}>
 				<GlobalStyles />
 				<Nav />
-				{children}
+				<MoviesProvider>{children}</MoviesProvider>
 			</body>
 		</html>
 	)
