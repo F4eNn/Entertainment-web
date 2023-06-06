@@ -17,6 +17,8 @@ export type DataMovies = {
 	title: string
 	year: number
 	isTrending: boolean
+	
+
 }
 
 export const Trending = () => {

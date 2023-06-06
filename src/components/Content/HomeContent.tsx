@@ -1,11 +1,7 @@
 'use client'
 import styled from 'styled-components'
-
-import { useEffect, useState } from 'react'
-import { DataMovies } from '../Trending/Trending'
-import { GridItem } from './GridItem'
-
-const ContentContainer = styled.div`
+import { useApi } from '@/hooks/useApi'
+export const ContentContainer = styled.div`
 	width: 95%;
 	margin-inline: auto;
 	font-size: clamp(1em, 2vw, 1.3em);
@@ -17,7 +13,7 @@ export const H2 = styled.h2`
 	font-size: 1.9em;
 	font-weight: 300;
 `
-const Grid = styled.div`
+export const Grid = styled.div`
 	margin-top: 3rem;
 	display: grid;
 	justify-content: center;
@@ -36,30 +32,14 @@ const Grid = styled.div`
 `
 
 export const HomeContent = () => {
-	const [data, setData] = useState<DataMovies[]>([])
-	const [isLoading, setIsLoading] = useState(false)
-
-	useEffect(() => {
-		const getAllItems = async () => {
-			const response = await fetch('./data.json')
-			const data = await response.json()
-			setData(data)
-		}
-		getAllItems()
-	}, [])
-	const allMovies = data.filter((item): item is DataMovies => item.isTrending === false)
-
-	const movieItem = allMovies.map((movie, index) => (
-		<GridItem
-			key={index}
-			{...movie}
-		/>
-	))
+	const query = 'isTrending'
+	const value = false
+	const { relevantDataArr: allStuff, filteredArr: allStuffArr } = useApi(query, value)
 
 	return (
 		<ContentContainer>
 			<H2>Recomendet for you</H2>
-			<Grid>{movieItem}</Grid>
+			<Grid>{allStuff}</Grid>
 		</ContentContainer>
 	)
 }

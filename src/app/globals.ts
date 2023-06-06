@@ -38,9 +38,7 @@ body{
     display: flex;
     justify-content: space-between;
     margin-inline: auto;
-    /* max-width: 1440px; */
     width: 100%;
-    
   }
 }
 `

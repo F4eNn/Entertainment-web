@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { Button } from './NavUI/Button'
 import { MovieIcon } from '../Icons/MovieIcon'
 import { HomeIcon } from '../Icons/HomeIcon'
 import { TvSeriesIcon } from '../Icons/TvSeriesIcon'
 import { BookmarkIcon } from '../Icons/BookmarkIcon'
 import { useRef } from 'react'
+import Link from 'next/link'
 
-const ButtonBox = styled.div`
+const LinkContainer = styled.div`
 	display: flex;
 	gap: 2rem;
 	& svg {
@@ -27,13 +27,17 @@ const ButtonBox = styled.div`
 		margin: 5rem 0 auto 0;
 	}
 `
-
+export const StyledLink = styled(Link)`
+	position: relative;
+	border: none;
+	cursor: pointer;
+`
 export const Categories = () => {
-	const buttonBox = useRef<HTMLDivElement>(null)
+	const linkContainerRef = useRef<HTMLDivElement>(null)
 
 	const addActive = (e: React.MouseEvent<HTMLDivElement>) => {
 		const target = e.target as Node
-		buttonBox.current?.childNodes.forEach(category => {
+		linkContainerRef.current?.childNodes.forEach(category => {
 			category.childNodes.forEach(svg => (svg.firstChild as SVGAElement).classList.remove('active'))
 		})
 		if (!target.firstChild) {
@@ -46,21 +50,21 @@ export const Categories = () => {
 	// Zrobić pętle useEffect później zeby pobrac aktualny active
 
 	return (
-		<ButtonBox
-			ref={buttonBox}
+		<LinkContainer
+			ref={linkContainerRef}
 			onClick={addActive}>
-			<Button>
+			<StyledLink href='/'>
 				<HomeIcon />
-			</Button>
-			<Button>
+			</StyledLink>
+			<StyledLink href='/movies'>
 				<MovieIcon />
-			</Button>
-			<Button>
+			</StyledLink>
+			<StyledLink href='/series'>
 				<TvSeriesIcon />
-			</Button>
-			<Button>
+			</StyledLink>
+			<StyledLink href='/bookmarks'>
 				<BookmarkIcon />
-			</Button>
-		</ButtonBox>
+			</StyledLink>
+		</LinkContainer>
 	)
 }
