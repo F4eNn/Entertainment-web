@@ -1,7 +1,7 @@
 'use client'
 import { SearchIcon } from '../Icons/SearchIcon'
 import styled from 'styled-components'
-import { MoviesContext } from '../store/moviesContext'
+import { MoviesContext } from '../../store/moviesContext'
 import { useContext } from 'react'
 export const Input = styled.input`
 	width: 100%;

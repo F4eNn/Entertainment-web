@@ -8,8 +8,6 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-
-
 export const TrendingContainer = styled.div`
 	width: 95%;
 	margin-inline: auto;
@@ -123,7 +121,7 @@ export const Trending = () => {
 								/>
 							</Thumbnail>
 
-							<BookmarkButton />
+							<BookmarkButton {...item}/>
 						</ItemBox>
 					))}
 				</StyledSlider>

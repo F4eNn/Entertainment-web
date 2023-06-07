@@ -1,6 +1,6 @@
 'use client'
 import styled from 'styled-components'
-import { MoviesContext } from '@/components/store/moviesContext'
+import { MoviesContext } from '@/store/moviesContext'
 import { useContext } from 'react'
 
 import { useApi } from '@/hooks/useApi'
@@ -42,6 +42,9 @@ export const HomeContent = () => {
 	const { filteredItems } = useFilterArr(allItemsArr)
 	const moviesCtx = useContext(MoviesContext)
 	const content = moviesCtx.isInputEmpty ? homeMovies : filteredItems
+
+	
+
 	return (
 		<ContentContainer>
 			<H2>Recomendet for you</H2>

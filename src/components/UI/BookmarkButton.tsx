@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useState } from 'react'
 import { BookmarkEmptyIcon } from '../Icons/BookmarkEmptyIcon'
 import { BookmarkFullIcon } from '../Icons/BookmarkFullIcon'
-
+import { DataMovies } from '../Trending/Trending'
 const Button = styled.button`
 	position: absolute;
 	right: 1rem;
@@ -30,8 +30,11 @@ const Button = styled.button`
 	}
 `
 
-export const BookmarkButton = () => {
-	const [isBookmarked, setIsBookmarked] = useState(false)
+export const BookmarkButton = (props: DataMovies) => {
+	const [isBookmark, setIsBookmarked] = useState(false)
+	const handleBookmark = () => {
+		setIsBookmarked(prev => !prev)
+	}
 
-	return <Button>{isBookmarked ? <BookmarkFullIcon /> : <BookmarkEmptyIcon />}</Button>
+	return <Button onClick={handleBookmark}>{isBookmark ? <BookmarkFullIcon /> : <BookmarkEmptyIcon />}</Button>
 }

@@ -1,6 +1,6 @@
 'use client'
 import { useContext, useEffect, useState } from 'react'
-import { MoviesContext } from '@/components/store/moviesContext'
+import { MoviesContext } from '@/store/moviesContext'
 import { Browser } from '@/components/Browser/Browser'
 import { Trending } from '@/components/Trending/Trending'
 import { HomeContent } from '@/components/Content/HomeContent'

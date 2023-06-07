@@ -1,7 +1,7 @@
 import { Outfit } from 'next/font/google'
 import { GlobalStyles } from './globals'
 import { Nav } from '@/components/Nav/Nav'
-import { MoviesProvider } from '@/components/store/moviesProvider'
+import { MoviesProvider } from '@/store/moviesProvider'
 const outfit = Outfit({ subsets: ['latin'] })
 
 export const metadata = {
