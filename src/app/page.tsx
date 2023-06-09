@@ -1,12 +1,12 @@
 import { Wrapper } from "@/components/UI/Wrapper";
-
+import { HomeContent } from "@/components/Content/HomeContent";
 
 export default function Home() {
 	
 	return (
 		<main>
 			<Wrapper>
-				<h1>Home Page</h1>
+				<HomeContent />
 			</Wrapper>
 		</main>
 	)
