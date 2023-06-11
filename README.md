@@ -1,5 +1,20 @@
+## [Live here](https://entertainment-web-nine.vercel.app/)
 
-### The challenge
+## [Desing from](https://www.frontendmentor.io/home)
+
+# Screenshots
+
+
+![Desktop preview](./public/desktop-preview.png)
+
+
+
+![Tablet preview](./public/tablet-preview.png)
+
+
+
+![mobile preview](./public/mobile-preview.png)
+# The challenge
 
 Users should be able to:
 
@@ -8,10 +23,8 @@ Users should be able to:
 - Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
 - Add/Remove bookmarks from all movies and TV series
 - Search for relevant shows on all pages
-- **Bonus**: Build this project as a full-stack application
-- **Bonus**: If you're building a full-stack app, we provide authentication screen (sign-up/login) designs if you'd like to create an auth flow
 
-### Built with
+# Built with
 
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
