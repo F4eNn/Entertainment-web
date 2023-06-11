@@ -1,5 +1,5 @@
 import React from 'react'
-import { DataProps } from '../Content/HomeContent'
+import { DataProps } from '../Content/Home'
 
 const initValues = {
 	AddToBookmarkHandle: (index: number) => {},

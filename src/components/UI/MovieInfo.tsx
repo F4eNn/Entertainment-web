@@ -1,4 +1,4 @@
-import { DataProps } from '../Content/HomeContent'
+import { DataProps } from '../Content/Home'
 import { CategoryMoveIcon } from '../Icons/CategoryMoveIcon'
 import { CategoryTvIcon } from '../Icons/CategoryTvIcon'
 type MovieInfoProps = Partial<DataProps>

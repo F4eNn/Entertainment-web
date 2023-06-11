@@ -1,4 +1,10 @@
+import { Bookmarks } from '@/components/Content/Bookmarks'
+
 const BookmarkedPage = () => {
-	return <h1>Bookmarked</h1>
+	return (
+		<main>
+			<Bookmarks />
+		</main>
+	)
 }
 export default BookmarkedPage

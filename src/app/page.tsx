@@ -1,13 +1,13 @@
-import { Wrapper } from '@/components/UI/Wrapper'
-import { HomeContent } from '@/components/Content/HomeContent'
-import { CarouselTrending } from '@/components/Content/CarouselTrending'
-import { Browser } from '@/components/Browser/Browser'
-export default function Home() {
-	return (
-		<main className='flex flex-col'>
-			<CarouselTrending />
+import { Home } from '@/components/Content/Home'
+import { CarouselTrending } from '@/components/carousel/CarouselTrending'
 
-			<HomeContent />
+const HomePage = () => {
+	return (
+		<main>
+			<CarouselTrending />
+			<Home />
 		</main>
 	)
 }
+
+export default HomePage

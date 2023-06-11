@@ -1,5 +1,10 @@
+import { TvSeries } from '@/components/Content/TvSeries'
 
 const TvSeriesPage = () => {
-    return <h1 className="">TvSeries</h1>
+	return (
+		<main>
+			<TvSeries />
+		</main>
+	)
 }
 export default TvSeriesPage

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { MoviesContext } from './MoviesContext'
-import { DataProps } from '../Content/HomeContent'
+import { DataProps } from '../Content/Home'
 type ProviderProps = {
 	children: React.ReactNode
 }

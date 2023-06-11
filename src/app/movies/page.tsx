@@ -1,4 +1,10 @@
+import { Movies } from '@/components/Content/Movies'
+
 const MoviesPage = () => {
-	return <h1>Movies Page</h1>
+	return (
+		<main>
+			<Movies />
+		</main>
+	)
 }
 export default MoviesPage
