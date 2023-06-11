@@ -3,7 +3,6 @@ import { SearchIcon } from '../Icons/SearchIcon'
 import { useContext, useEffect } from 'react'
 import { MoviesContext } from '../store/MoviesContext'
 import { usePathname } from 'next/navigation'
-import path from 'path'
 type BrowserProps = {
 	placeholder: string
 	foundedItems: number

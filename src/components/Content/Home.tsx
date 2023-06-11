@@ -55,13 +55,14 @@ export const Home = () => {
 		}
 	})
 	const isVisibleCarousel = isEmptyInput ? <CarouselTrending /> : null
+
 	return (
-		<div className=' w-full mx-auto mt-9 lg:w-full'>
+		<div className=' w-full mx-auto mt-9 lg:w-[95%]'>
 			<Browser
 				foundedItems={homeFoundedItems}
 				placeholder='Search for movies or TV series'
 			/>
-			{isVisibleCarousel}
+			<div>{isVisibleCarousel}</div>
 			<h2 className='text-2xl xs:text-3xl lg:4-xl'>Recomendet for you</h2>
 			<GridCard>{homeSection}</GridCard>
 		</div>

@@ -12,7 +12,7 @@ export const Nav = () => {
 	const isCurrentPage = (path: string) => currentPath === path
 
 	return (
-		<nav className='bg-semi-dark-blue p-4 flex items-center justify-between xs:rounded-radius-md xs:m-3 lg:flex-col lg:h-[calc(100vh-25px)]  '>
+		<nav className='bg-semi-dark-blue p-4 flex items-center justify-between xs:rounded-radius-md xs:m-5 lg:p-5 lg:flex-col lg:h-[calc(100vh-25px)]'>
 			<Link href='/'>
 				<Image
 					src='./assets/logo.svg'
@@ -22,7 +22,7 @@ export const Nav = () => {
 					className='lg:w-[40px] lg:h-[25px] lg:ml-[3px] '
 				/>
 			</Link>
-			<ul className='flex justify-center items-center gap-4 xs:gap-8 lg:flex-col lg: mb-auto lg:mt-12'>
+			<ul className='flex justify-center items-center gap-4 xs:gap-8 lg:flex-col lg: mb-auto lg:mt-16'>
 				<li>
 					<Link href='/'>
 						<HomeNavIcon fill={`${isCurrentPage('/') ? '#fff' : '#5A698F'} `} />

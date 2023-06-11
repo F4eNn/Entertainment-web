@@ -18,7 +18,6 @@ export const Movies = () => {
 			)
 		}
 	})
-
 	return (
 		<div className=' w-full mx-auto mt-9 lg:w-full'>
 			<Browser

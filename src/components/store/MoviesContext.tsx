@@ -9,7 +9,9 @@ const initValues = {
 	homeFoundedItems: 0,
 	tvSeriedFoundedItems: 0,
 	movieFoundedItems: 0,
-	bookmarkedFoundedItems:0
+	bookmarkedFoundedItems:0,
+	isBookmarkedTVseries: 0,
+	isBookmarkedMovies:0,
 }
 
 export const MoviesContext = React.createContext(initValues)

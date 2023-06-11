@@ -43,7 +43,7 @@ export const CarouselItem = (props: CarouselProps) => {
 				</picture>
 				{isHover && <Overlay />}
 			</div>
-			<div className='absolute bottom-2 left-2 text-sm xs:bottom-4 xs:left-4 '>
+			<div className='absolute bottom-2 left-2 text-sm xs:bottom-4 xs:left-4 xs:text-base md:text-lg xl:text-xl'>
 				<MovieInfo {...props} />
 			</div>
 		</>

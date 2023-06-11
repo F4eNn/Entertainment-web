@@ -1,6 +1,6 @@
 'use client'
-import { Nav } from '@/components/Nav/Nav'
 import './globals.css'
+import { Nav } from '@/components/Nav/Nav'
 import { Outfit } from 'next/font/google'
 import { Wrapper } from '@/components/UI/Wrapper'
 import { MoviesProvider } from '@/components/store/MoviesProvider'
@@ -16,14 +16,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang='en'>
 			<body className={`${outfit.className} bg-dark-blue  `}>
-				<Wrapper>
+				<div className='lg:flex'>
 					<Nav />
-					<div className='w-full'>
-						<MoviesProvider>
-							{children}
-						</MoviesProvider>
-					</div>
-				</Wrapper>
+					<Wrapper>
+						<div className='w-full'>
+							<MoviesProvider>{children}</MoviesProvider>
+						</div>
+					</Wrapper>
+				</div>
 			</body>
 		</html>
 	)
