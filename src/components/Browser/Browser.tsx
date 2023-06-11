@@ -15,7 +15,7 @@ export const Browser = ({ placeholder, foundedItems }: BrowserProps) => {
 	}
 	const isEmptyInput =
 		inputValue === '' ? null : (
-			<p>
+			<p className='mb-5'>
 				Founded <span>{foundedItems}</span> result for <span>{`"${inputValue}"`}</span>
 			</p>
 		)

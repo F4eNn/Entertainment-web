@@ -45,7 +45,7 @@ export const MoviesProvider = ({ children }: ProviderProps) => {
 	const getInputValue = (value: string) => {
 		setInputValue(value)
 	}
-	const homeFoundedItems = filteredItems.length
+	const homeFoundedItems = filteredItems.filter(item =>  !item.isTrending).length
 	const tvSeriedFoundedItems = filteredItems.filter(item => item.category === 'TV Series').length
 	const movieFoundedItems = filteredItems.filter(item => item.category === 'Movie').length
 	const bookmarkedFoundedItems = filteredItems.filter(item => item.isBookmarked).length
