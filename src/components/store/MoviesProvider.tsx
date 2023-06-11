@@ -21,9 +21,9 @@ export const MoviesProvider = ({ children }: ProviderProps) => {
 	}, [])
 
 	useEffect(() => {
-		const filteredArr = data.filter(item => item.title.toLowerCase().includes(inputValue))
+		const filteredArr = data.filter(item => item.title.toLowerCase().includes(inputValue.toLowerCase()))
 		setFilteredItems(filteredArr)
-
+		
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [data, inputValue])
 	const AddToBookmarkHandle = (index: number) => {
