@@ -5,6 +5,7 @@ import { Outfit } from 'next/font/google'
 import { Browser } from '@/components/Browser/Browser'
 import { Wrapper } from '@/components/UI/Wrapper'
 import { MoviesProvider } from '@/components/store/MoviesProvider'
+
 const outfit = Outfit({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,16 +18,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='en'>
 			<body className={`${outfit.className} bg-dark-blue  `}>
 				<Wrapper>
-					<div className='lg:flex gap-5  '>
-						<header className=' '>
-							<Nav />
-						</header>
-						<div className='w-full '>
-							<MoviesProvider>
-								<Browser />
-								{children}
-							</MoviesProvider>
-						</div>
+					<Nav />
+					<div className='w-full'>
+						<MoviesProvider>
+							<Browser />
+							{children}
+						</MoviesProvider>
 					</div>
 				</Wrapper>
 			</body>
