@@ -23,6 +23,8 @@ export const MoviesProvider = ({ children }: ProviderProps) => {
 	useEffect(() => {
 		const filteredArr = data.filter(item => item.title.toLowerCase().includes(inputValue))
 		setFilteredItems(filteredArr)
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [data, inputValue])
 	const AddToBookmarkHandle = (index: number) => {
 		setFilteredItems(prev => {
@@ -37,10 +39,18 @@ export const MoviesProvider = ({ children }: ProviderProps) => {
 	const getInputValue = (value: string) => {
 		setInputValue(value)
 	}
+	const homeFoundedItems = filteredItems.length
+	const tvSeriedFoundedItems = filteredItems.filter(item => item.category === 'TV Series').length
+	const movieFoundedItems = filteredItems.filter(item => item.category === 'Movie').length
+	const bookmarkedFoundedItems = filteredItems.filter(item => item.isBookmarked).length
 
 	const values = {
 		filteredItems,
 		inputValue,
+		homeFoundedItems,
+		tvSeriedFoundedItems,
+		movieFoundedItems,
+		bookmarkedFoundedItems,
 		AddToBookmarkHandle,
 		getInputValue,
 	}

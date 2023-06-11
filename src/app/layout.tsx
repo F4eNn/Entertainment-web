@@ -2,7 +2,6 @@
 import { Nav } from '@/components/Nav/Nav'
 import './globals.css'
 import { Outfit } from 'next/font/google'
-import { Browser } from '@/components/Browser/Browser'
 import { Wrapper } from '@/components/UI/Wrapper'
 import { MoviesProvider } from '@/components/store/MoviesProvider'
 
@@ -21,7 +20,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					<Nav />
 					<div className='w-full'>
 						<MoviesProvider>
-							<Browser />
 							{children}
 						</MoviesProvider>
 					</div>
