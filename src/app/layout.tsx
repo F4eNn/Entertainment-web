@@ -7,14 +7,33 @@ import { MoviesProvider } from '@/components/store/MoviesProvider'
 
 const outfit = Outfit({ subsets: ['latin'] })
 
-export const metadata = {
-	title: 'Entertainment web',
-	description: 'looking for your favourite movie',
-}
+// <!DOCTYPE html>
+// <html lang="pl">
+// <head>
+// 	<meta charset="UTF-8" />
+// 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+// 	<title>Document</title>
+// </head>
+// <body>
+
+// </body>
+// </html>
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en'>
+			<head>
+				<meta charSet='UTF-8' />
+				<meta
+					name='description'
+					content='all movies in one place'
+				/>
+				<meta
+					name='viewport'
+					content='width=device-width, initial-scale=1.0'
+				/>
+				<title>Entertainment Web</title>
+			</head>
 			<body className={`${outfit.className} bg-dark-blue  `}>
 				<div className='lg:flex'>
 					<Nav />

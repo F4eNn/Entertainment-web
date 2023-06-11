@@ -14,7 +14,7 @@ export const MovieInfo = ({ category, rating, title, year }: MovieInfoProps) => 
 				<span className='h-2 w-2 bg-gray rounded-full'></span>
 				<span className='font-extralight'> {rating}</span>
 			</div>
-			<h3 className='font-bold '>{title}</h3>
+			<p className='font-bold '>{title}</p>
 		</div>
 	)
 }

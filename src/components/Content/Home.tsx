@@ -30,32 +30,17 @@ export const Home = () => {
 	const isEmptyInput = inputValue === ''
 
 	const homeSection = filteredItems.map((item, index) => {
-		switch (true) {
-			case !isEmptyInput:
-				if (item) {
-					return (
-						<GridItem
-							key={index}
-							{...item}
-							index={index}
-						/>
-					)
-				}
-				break
-			default:
-				if (!item?.isTrending && item) {
-					return (
-						<GridItem
-							key={index}
-							{...item}
-							index={index}
-						/>
-					)
-				}
+		if (!item?.isTrending && item) {
+			return (
+				<GridItem
+					key={index}
+					{...item}
+					index={index}
+				/>
+			)
 		}
 	})
 	const isVisibleCarousel = isEmptyInput ? <CarouselTrending /> : null
-
 	return (
 		<div className=' w-full mx-auto mt-9 lg:w-[95%]'>
 			<Browser

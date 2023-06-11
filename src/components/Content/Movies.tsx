@@ -25,7 +25,7 @@ export const Movies = () => {
 				placeholder='Search for movies'
 			/>
 
-			<h2 className='text-2xl xs:text-3xl lg:4-xl'>Movies</h2>
+			<h1 className='text-2xl xs:text-3xl lg:4-xl'>Movies</h1>
 			<GridCard>{movies}</GridCard>
 		</div>
 	)

@@ -13,7 +13,9 @@ export const Nav = () => {
 
 	return (
 		<nav className='bg-semi-dark-blue p-4 flex items-center justify-between xs:rounded-radius-md xs:m-5 lg:p-5 lg:flex-col lg:h-[calc(100vh-25px)]'>
-			<Link href='/'>
+			<Link
+				aria-label='home '
+				href='/'>
 				<Image
 					src='./assets/logo.svg'
 					alt='logo'
@@ -24,24 +26,31 @@ export const Nav = () => {
 			</Link>
 			<ul className='flex justify-center items-center gap-4 xs:gap-8 lg:flex-col lg: mb-auto lg:mt-16'>
 				<li>
-					<Link href='/'>
+					<Link
+						aria-label='home '
+						href='/'>
 						<HomeNavIcon fill={`${isCurrentPage('/') ? '#fff' : '#5A698F'} `} />
 					</Link>
 				</li>
 				<li>
-					<Link href='/movies'>
+					<Link
+						aria-label='movies'
+						href='/movies'>
 						<MovieNavSvg fill={`${isCurrentPage('/movies') ? '#fff' : '#5A698F'}`} />
 					</Link>
 				</li>
 				<li>
 					<Link
+						aria-label='tv series '
 						href='/tv-series'
 						className='hover:svg-icon '>
 						<TvSeriesIconSvg fill={`${isCurrentPage('/tv-series') ? '#fff' : '#5A698F'}`} />
 					</Link>
 				</li>
 				<li>
-					<Link href='/bookmarked'>
+					<Link
+						aria-label='bookmarked'
+						href='/bookmarked'>
 						<BookmarkNavSvg fill={`${isCurrentPage('/bookmarked') ? '#fff' : '#5A698F'}`} />
 					</Link>
 				</li>

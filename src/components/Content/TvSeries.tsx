@@ -22,7 +22,7 @@ export const TvSeries = () => {
 	return (
 		<div className=' w-full mx-auto mt-9 lg:w-full'>
             <Browser foundedItems={tvSeriedFoundedItems} placeholder='Search for TV series'/>
-			<h2 className='text-2xl xs:text-3xl lg:4-xl'>Tv Series</h2>
+			<h1 className='text-2xl xs:text-3xl lg:4-xl'>Tv Series</h1>
 			<GridCard>{tvSeries}</GridCard>
 		</div>
 	)

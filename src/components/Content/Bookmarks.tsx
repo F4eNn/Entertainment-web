@@ -51,7 +51,7 @@ export const Bookmarks = () => {
 				placeholder='Search for bookmarked shows'
 			/>
 			<div className='mt-7'>
-				<h2 className='text-2xl font-light mb-4 xs:text-3xl lg:4-xl'>Bookmarked Movies</h2>
+				<h1 className='text-2xl font-light mb-4 xs:text-3xl lg:4-xl'>Bookmarked Movies</h1>
 				{isEmptyFieldMovie}
 			</div>
 			<div className='mt-9 mb-10'>
