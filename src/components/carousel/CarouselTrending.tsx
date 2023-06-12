@@ -31,7 +31,7 @@ export const CarouselTrending = () => {
 	}
 
 	return (
-		<div className='w-full mx-auto mt-7 mb-6 '>
+		<div className='w-full mx-auto mt-7 mb-6'>
 			<h1 className='text-2xl mb-4 xs:text-3xl md:text-4xl'>Trending</h1>
 			<Swiper {...swiperSettings}>
 				{filteredItems.map((item, index) => {
